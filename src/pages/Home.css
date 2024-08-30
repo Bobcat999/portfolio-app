@@ -1,0 +1,105 @@
+.home {
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+}
+
+.greeting {
+  color: var(--primary);
+  font-size: 10rem;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+  position:sticky;
+  top: 0;
+  padding-left: 10rem;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  margin-bottom: 10rem;
+  margin-top: 20rem;
+}
+
+.bio {
+  color: var(--secondary);
+  font-size: 2rem;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+  padding-left: 10rem;
+  margin-top: 10rem;
+  margin-bottom: 100vh;
+}
+
+.bio-title {
+  color: var(--primary);
+  font-size: 3rem;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+  font-weight: bold;
+}
+
+.fade-in {
+  animation: fadeIn linear both;
+  animation-timeline: view();
+  animation-range: cover 10% cover 30%;
+  transform-origin: left;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(500px) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.greeting div {
+  display: block;
+  overflow: hidden; /* Ensures the text is hidden as it types */
+  white-space: nowrap; /* Prevents the text from wrapping */
+  border-right: 0.15em solid transparent; /* Creates the cursor effect */
+}
+
+.greeting div:nth-child(1) {
+  width: 0ch; /* Start with 0 width */
+  animation: typing1 0.5s steps(3, end) 1s forwards,
+    blink-caret 0.75s step-end 1s backwards;
+}
+
+.greeting div:nth-child(2) {
+  width: 0ch; /* Start with 0 width */
+  animation: typing2 2s steps(9, end) 2.5s forwards,
+    blink-caret 0.75s step-end 2.5s infinite forwards;
+}
+
+@keyframes typing1 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 3ch;
+  } /* Adjust the width to fit the text length */
+}
+
+@keyframes typing2 {
+  from {
+    width: 0ch;
+  }
+  to {
+    width: 9ch;
+  } /* Adjust the width to fit the text length */
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--primary);
+  }
+}

@@ -2,6 +2,7 @@
   width: 100%;
   height: 100%;
   background-color: var(--background);
+  scroll-behavior: smooth;
 }
 
 .greeting {
@@ -9,14 +10,11 @@
   font-size: 10rem;
   margin: 0;
   text-align: left;
-  width: 100%;
   position:sticky;
-  top: 0;
-  padding-left: 10rem;
-  padding-top: 10rem;
-  padding-bottom: 5rem;
-  margin-bottom: 10rem;
-  margin-top: 20rem;
+  height: 100vh;
+  padding-top: 25vh;
+  padding-left: 2rem;
+
 }
 
 .bio {
@@ -24,10 +22,10 @@
   font-size: 2rem;
   margin: 0;
   text-align: left;
-  width: 100%;
-  padding-left: 10rem;
+  width: auto;
+  padding-left: 2rem;
   margin-top: 10rem;
-  margin-bottom: 100vh;
+  margin-bottom: 10rem;
 }
 
 .bio-title {
@@ -39,24 +37,47 @@
   font-weight: bold;
 }
 
+.bio-content > div{
+  color: var(--secondary);
+  font-size: 2rem;
+  margin: 0;
+  text-align: left;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.contact-info {
+  color: var(--primary);
+  font-size: 2rem;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 10rem;
+}
+
+/* fade in amimation */
 .fade-in {
   animation: fadeIn linear both;
   animation-timeline: view();
-  animation-range: cover 10% cover 30%;
+  animation-range: cover 0% cover 30%;
   transform-origin: left;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(500px) scale(0.5);
+    filter: blur(10px);
+    transform: translateY(500px) scale(0.3);
   }
   to {
     opacity: 1;
+    filter: blur(0);
     transform: translateY(0px) scale(1);
   }
 }
 
+/* name typing animation */
 .greeting div {
   display: block;
   overflow: hidden; /* Ensures the text is hidden as it types */
